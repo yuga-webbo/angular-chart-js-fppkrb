@@ -1,0 +1,14 @@
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .input-group-container {
+    display: flex;
+    justify-content: space-between;
+
+    .input-group + .input-group {
+      margin-left: 20px;
+    }
+  }
+}

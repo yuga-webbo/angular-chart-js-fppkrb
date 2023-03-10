@@ -1,0 +1,38 @@
+<ng-container *ngIf="data | async">
+	<div class="form-container" [formGroup]="form">
+		<div class="input-group-container">
+			<div class="input-group">
+				<label for="baseline-year">Baseline year</label>
+				<select id="baseline-year" formControlName="baselineYear">
+			<option value="2019">2019</option>
+			<option value="2020">2020</option>
+			<option value="2021">2021</option>
+		</select>
+			</div>
+			<div class="input-group">
+				<label for="target-year">Target year</label>
+				<input id="target-year" type="number"  [min]="currentYear" formControlName="targetYear">
+			</div>
+		</div>
+		<div class="input-group-container">
+			<div class="input-group">
+				<label for="emission-reduction-target">Emission Reduction Target</label>
+				<input id="emission-reduction-target" type="number" min="0" max="100" formControlName="emissionReductionTarget">
+				<label for="emission-reduction-target">%</label>
+			</div>
+			<div class="input-group">
+				<label for="emission-reduction-target">% Increase Activity</label>
+				<input id="emission-reduction-target" type="number" min="0" max="100" formControlName="increaseActivity">
+				<label for="emission-reduction-target">%</label>
+			</div>
+			<div class="input-group">
+				<label for="emission-reduction-target">% of emissiones to offset per year</label>
+				<input id="emission-reduction-target" type="number" min="0" max="100" formControlName="emissionOffsetYear">
+				<label for="emission-reduction-target">%</label>
+			</div>
+		</div>
+	</div>
+	<div class="chart-container" width="600" height="400">
+		<canvas id="mychart" #mychart></canvas>
+	</div>
+</ng-container>
